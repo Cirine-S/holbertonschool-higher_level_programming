@@ -2,7 +2,8 @@
 i = ord('z')
 while i >= ord('a'):
     if i % 2 == 0:
-        print(chr(i), end='')
+        c = chr(i)
     else:
-        print(chr(i-32), end="")
+        c = chr(i-32)
+    print(c, end="")
     i -= 1
