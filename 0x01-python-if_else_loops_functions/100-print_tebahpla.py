@@ -1,9 +1,7 @@
 #!/usr/bin/python3
-i = ord('z')
-while i >= ord('a'):
+for i in range(122, 96, -1):
     if i % 2 == 0:
         c = chr(i)
     else:
         c = chr(i-32)
     print(c, end="")
-    i -= 1
