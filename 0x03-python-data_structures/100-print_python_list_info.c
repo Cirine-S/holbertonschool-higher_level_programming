@@ -1,5 +1,11 @@
 #include <Python.h>
 
+/**
+ * print_python_list_info - void function
+ * @p: pyobj
+ * Return: void
+ */
+
 void print_python_list_info(PyObject *p)
 {
 	size_t size, i = 0;
