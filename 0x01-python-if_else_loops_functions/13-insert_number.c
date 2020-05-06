@@ -11,8 +11,8 @@
 listint_t *insert_node(listint_t **head, int number)
 {
 	listint_t *new, *current, *prev;
-
 	current = *head;
+	prev = *head;
 	new = malloc(sizeof(listint_t));
 	if (new == NULL)
 		return (NULL);
@@ -31,8 +31,16 @@ listint_t *insert_node(listint_t **head, int number)
 			}
 			else
 			{
-				new->next = current;
-				prev->next = new;
+				if (!prev)
+				{
+					new->next = *head;
+					*head = new;
+				}
+				else
+				{
+					new->next = current;
+					prev->next = new;
+				}
 				break;
 			}
 		}
