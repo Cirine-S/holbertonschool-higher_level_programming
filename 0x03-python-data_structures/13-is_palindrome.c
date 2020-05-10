@@ -10,10 +10,12 @@
 int is_palindrome(listint_t **head)
 {
 	listint_t *current = *head;
-	int len, tab[1000], i = 0;
+	int len = 0, tab[3000], i = 0;
 
 	if (!*head)
 		return (1);
+
+
 	while (current)
 	{
 		current = current->next;
@@ -31,5 +33,6 @@ int is_palindrome(listint_t **head)
 		if (tab[i] != tab[len - i - 1])
 			return (0);
 	}
+
 	return (1);
 }
