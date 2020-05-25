@@ -3,4 +3,7 @@
 
 
 class Rectangle:
+    """
+    pass
+    """
     pass
