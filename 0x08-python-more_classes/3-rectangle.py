@@ -62,11 +62,11 @@ class Rectangle:
     def __str__(self):
         """ str """
         if self.width == 0 or self.height == 0:
-           return ''
+            return ''
         rec = ''
         for i in range(self.height):
             for j in range(self.width):
                 rec += '#'
-                if j == self.width -1:
+                if j == self.width - 1:
                     rec += '\n'
         return rec
