@@ -55,4 +55,18 @@ class Rectangle:
 
     def perimeter(self):
         """ perimeter """
+        if self.width == 0 or self.height == 0:
+            return 0
         return self.height*2 + self.width*2
+
+    def __str__(self):
+        """ str """
+        if self.width == 0 or self.height == 0:
+           return ''
+        rec = ''
+        for i in range(self.height):
+            for j in range(self.width):
+                rec += '#'
+                if j == self.width -1:
+                    rec += '\n'
+        return rec
