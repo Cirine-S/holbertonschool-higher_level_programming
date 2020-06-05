@@ -14,6 +14,7 @@ try:
 except:
     my_list = []
 
+
 my_list += argv[1:]
 
 save_to_json_file(my_list, f)
