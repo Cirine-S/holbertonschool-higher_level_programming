@@ -16,7 +16,7 @@ class Student:
         dict = {}
         for item in attrs:
             if type(item) is not str:
-               return self.__dict__
+                return self.__dict__
             if item in self.__dict__:
                 dict[item] = self.__dict__[item]
         return dict
