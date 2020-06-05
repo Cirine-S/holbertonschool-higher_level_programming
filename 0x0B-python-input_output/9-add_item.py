@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+'''load, add then save'''
 import json
 from sys import argv
 
@@ -9,7 +10,7 @@ load_from_json_file = __import__('8-load_from_json_file').load_from_json_file
 f = 'add_item.json'
 
 try:
-    my_list = load_from_json_file(filename)
+    my_list = load_from_json_file(f)
 except:
     my_list = []
 
