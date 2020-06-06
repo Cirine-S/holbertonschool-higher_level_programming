@@ -12,4 +12,3 @@ class Square(Rectangle):
 
     def __str__(self):
         return '[Square] ' + str(self.__size) + '/' + str(self.__size)
-
