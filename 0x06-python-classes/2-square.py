@@ -5,7 +5,7 @@
 class Square:
     """square class"""
 
-    def __init__(self, size = 0):
+    def __init__(self, size=0):
         """square definition"""
 
         if not isinstance(size, int):
