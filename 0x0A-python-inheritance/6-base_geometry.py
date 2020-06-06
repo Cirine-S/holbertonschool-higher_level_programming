@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+'''exception raise module'''
+
+
 class BaseGeometry:
     """
     Exception raise
