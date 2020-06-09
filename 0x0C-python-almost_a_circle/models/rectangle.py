@@ -6,6 +6,7 @@ from models.base import Base
 class Rectangle(Base):
     '''inherited class'''
     def __init__(self, width, height, x=0, y=0, id=None):
+        '''init constructor'''
         super(Rectangle, self).__init__(id)
         self.width = width
         self.height = height
@@ -16,10 +17,12 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        '''width'''
         return self.__width
 
     @width.setter
     def width(self, width):
+        '''width setter'''
         if type(width) is not int:
             raise TypeError('width must be an integer')
         elif width <= 0:
@@ -28,10 +31,12 @@ class Rectangle(Base):
 
     @property
     def height(self):
+        '''height'''
         return self.__height
 
     @height.setter
     def height(self, height):
+        '''height setter'''
         if type(height) is not int:
             raise TypeError('height must be an integer')
         elif height <= 0:
@@ -40,10 +45,12 @@ class Rectangle(Base):
 
     @property
     def x(self):
+        '''x'''
         return self.__x
 
     @x.setter
     def x(self, x):
+        '''x setter'''
         if type(x) is not int:
             raise TypeError('x must be an integer')
         elif x < 0:
@@ -52,10 +59,12 @@ class Rectangle(Base):
 
     @property
     def y(self):
+        '''y'''
         return self.__y
 
     @y.setter
     def y(self, y):
+        '''y setter'''
         if type(y) is not int:
             raise TypeError('y must be an integer')
         elif y < 0:
@@ -63,9 +72,11 @@ class Rectangle(Base):
         self.__y = y
 
     def area(self):
+        '''area'''
         return self.__width * self.__height
 
     def display(self):
+        '''display'''
         for y in range(self.__y):
             print()
         for i in range(self.__height):
@@ -76,10 +87,12 @@ class Rectangle(Base):
             print()
 
     def __str__(self):
+        '''str'''
         return "[Rectangle] ({}) {}/{} - \
 {}/{}".format(self.id, self.__x, self.__y, self.width, self.height)
 
     def update(self, *args, **kwargs):
+        '''update'''
         if len(args) > 0:
             self.id = args[0]
         elif "id" in kwargs:
