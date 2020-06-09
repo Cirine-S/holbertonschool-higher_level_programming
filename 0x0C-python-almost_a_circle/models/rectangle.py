@@ -1,138 +1,119 @@
 #!/usr/bin/python3
-'''rectangle file'''
+'''inherited Rectangle'''
 from models.base import Base
 
 
 class Rectangle(Base):
-    '''Rectangle Class'''
-
+    '''inherited class'''
     def __init__(self, width, height, x=0, y=0, id=None):
-        '''Rectangle __init__'''
-        super().__init__(id)
+        '''init constructor'''
+        super(Rectangle, self).__init__(id)
         self.width = width
         self.height = height
         self.x = x
         self.y = y
 
-    def __str__(self):
-        '''Rectangle __str__'''
-        return ("[Rectangle] (%s) %s/%s - %s/%s" % (
-            self.id,
-            self.__x,
-            self.__y,
-            self.__width,
-            self.__height
-            ))
-
-    def area(self):
-        '''area function'''
-        return (self.__width * self.__height)
-
-    def display(self):
-        '''display function'''
-        for _ in range(self.__y):
-            print()
-        for _ in range(self.__height):
-            for _ in range(self.__x):
-                print(end=" ")
-            for _ in range(self.__width):
-                print(end="#")
-            print()
-
-    def update(self, *args, **kwargs):
-        '''update function'''
-        if "id" in kwargs:
-            self.id = kwargs["id"]
-        elif len(args) > 0:
-            self.id = args[0]
-        if "width" in kwargs:
-            self.width = kwargs["width"]
-        elif len(args) > 1:
-            self.width = args[1]
-        if "height" in kwargs:
-            self.height = kwargs["height"]
-        elif len(args) > 2:
-            self.height = args[2]
-        if "x" in kwargs:
-            self.x = kwargs["x"]
-        elif len(args) > 3:
-            self.x = args[3]
-        if "y" in kwargs:
-            self.y = kwargs["y"]
-        elif len(args) > 4:
-            self.y = args[4]
-
-    def to_dictionary(self):
-        '''to_dictionary function'''
-        dicti = {
-            'x': self.x,
-            'y': self.y,
-            'id': self.id,
-            'height': self.height,
-            'width': self.width
-        }
-        return (dicti)
+# properties
 
     @property
     def width(self):
-        '''width property'''
+        '''width'''
         return self.__width
+
+    @width.setter
+    def width(self, width):
+        '''width setter'''
+        if type(width) is not int:
+            raise TypeError('width must be an integer')
+        elif width <= 0:
+            raise ValueError("width must be > 0")
+        self.__width = width
 
     @property
     def height(self):
-        '''height property'''
+        '''height'''
         return self.__height
+
+    @height.setter
+    def height(self, height):
+        '''height setter'''
+        if type(height) is not int:
+            raise TypeError('height must be an integer')
+        elif height <= 0:
+            raise ValueError("height must be > 0")
+        self.__height = height
 
     @property
     def x(self):
-        '''x property'''
+        '''x'''
         return self.__x
+
+    @x.setter
+    def x(self, x):
+        '''x setter'''
+        if type(x) is not int:
+            raise TypeError('x must be an integer')
+        elif x < 0:
+            raise ValueError("x must be >= 0")
+        self.__x = x
 
     @property
     def y(self):
-        '''y property'''
+        '''y'''
         return self.__y
 
-    @width.setter
-    def width(self, value):
-        '''width Setter'''
-        if type(value) is int:
-            if value > 0:
-                self.__width = value
-            else:
-                raise ValueError("width must be > 0")
-        else:
-            raise TypeError("width must be an integer")
-
-    @height.setter
-    def height(self, value):
-        '''height Setter'''
-        if type(value) is int:
-            if value > 0:
-                self.__height = value
-            else:
-                raise ValueError("height must be > 0")
-        else:
-            raise TypeError("height must be an integer")
-
-    @x.setter
-    def x(self, value):
-        '''x Setter'''
-        if type(value) is int:
-            if value >= 0:
-                self.__x = value
-            else:
-                raise ValueError("x must be >= 0")
-        else:
-            raise TypeError("x must be an integer")
-
     @y.setter
-    def y(self, value):
-        '''y Setter'''
-        if type(value) is int:
-            if value >= 0:
-                self.__y = value
-            else:
-                raise ValueError("y must be >= 0")
-        else:
-            raise TypeError("y must be an integer")
+    def y(self, y):
+        '''y setter'''
+        if type(y) is not int:
+            raise TypeError('y must be an integer')
+        elif y < 0:
+            raise ValueError("y must be >= 0")
+        self.__y = y
+
+    def area(self):
+        '''area'''
+        return self.__width * self.__height
+
+    def display(self):
+        '''display'''
+        for y in range(self.__y):
+            print()
+        for i in range(self.__height):
+            for x in range(self.__x):
+                print(" ", end="")
+            for j in range(self.__width):
+                print("#", end='')
+            print()
+
+    def __str__(self):
+        '''str'''
+        return "[Rectangle] ({}) {}/{} - \
+{}/{}".format(self.id, self.__x, self.__y, self.width, self.height)
+
+    def update(self, *args, **kwargs):
+        '''update'''
+        if len(args) > 0:
+            self.id = args[0]
+        elif "id" in kwargs:
+            self.id = kwargs["id"]
+
+        if len(args) > 1:
+            self.width = args[1]
+        elif "width" in kwargs:
+            self.width = kwargs["width"]
+
+        if len(args) > 2:
+            self.height = args[2]
+        elif "height" in kwargs:
+            self.height = kwargs["height"]
+
+        if len(args) > 3:
+            self.x = args[3]
+        elif "x" in kwargs:
+            self.x = kwargs["x"]
+
+        if len(args) > 4:
+            self.y = args[4]
+        elif "y" in kwargs:
+            self.y = kwargs["y"]
