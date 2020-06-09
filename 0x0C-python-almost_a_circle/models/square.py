@@ -21,12 +21,12 @@ class Square(Rectangle):
         self.height = size
 
     def __str__(self):
-        """  str """
+        """  str            """
         return "[Square] ({}) {}/{} - \
 {}".format(self.id, self.x, self.y, self.size)
 
     def update(self, *args, **kwargs):
-        """update"""
+        """update            """
         if len(args) > 0:
             self.id = args[0]
         elif "id" in kwargs:
