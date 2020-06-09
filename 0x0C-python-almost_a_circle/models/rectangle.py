@@ -72,11 +72,11 @@ class Rectangle(Base):
         self.__y = y
 
     def area(self):
-        '''area'''
+        '''areaaaa'''
         return self.__width * self.__height
 
     def display(self):
-        '''display'''
+        '''displayyyy '''
         for y in range(self.__y):
             print()
         for i in range(self.__height):
@@ -87,12 +87,12 @@ class Rectangle(Base):
             print()
 
     def __str__(self):
-        '''str'''
+        '''strrrr '''
         return "[Rectangle] ({}) {}/{} - \
 {}/{}".format(self.id, self.__x, self.__y, self.width, self.height)
 
     def update(self, *args, **kwargs):
-        '''update'''
+        '''updateeee '''
         if len(args) > 0:
             self.id = args[0]
         elif "id" in kwargs:
