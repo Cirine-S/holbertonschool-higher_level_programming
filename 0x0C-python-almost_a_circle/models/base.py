@@ -9,7 +9,7 @@ class Base:
 
     def __init__(self, id=None):
         '''init constructor'''
-        if id is not None:
+        if id:
             self.id = id
         else:
             Base.__nb_objects += 1
