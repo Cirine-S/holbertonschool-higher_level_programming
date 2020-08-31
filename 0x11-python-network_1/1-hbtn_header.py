@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-from urllib import request
+import urllib.request as request
 import sys
-''' getheader of X-Request-Id'''
+''' getheader of X-Request-Id '''
 
 
 with request.urlopen(sys.argv[1]) as response:
