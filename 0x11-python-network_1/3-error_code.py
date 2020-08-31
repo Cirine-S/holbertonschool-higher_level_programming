@@ -6,7 +6,7 @@ import sys
 
 if __name__ == "__main__":
     try:
-        with request.urlopen(sys.argv[1]) as html:
+        with request.urlopen(sys.argv[1]) as response:
             html = response.read().decode()
             print(html)
     except HTTPError as r:
