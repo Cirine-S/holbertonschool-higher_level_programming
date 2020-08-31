@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-''' getheader of X-Request-Id '''
+""" A script that fetches URL  """
 from urllib import request
 import sys
 
