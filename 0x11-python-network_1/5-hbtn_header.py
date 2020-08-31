@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """ http header request """
-from urllib import request
+import requests
 import sys
 
 
