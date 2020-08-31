@@ -5,5 +5,6 @@ import sys
 
 
 if __name__ == "__main__":
-    http_header = requests.get(sys.argv[1])
-    print(http_header.headers.get('X-Request-Id'))
+    dicti = {'email': sys.argv[2]}
+    r = requests.post(sys.argv[1], data=dicti)
+    print(r.text)
