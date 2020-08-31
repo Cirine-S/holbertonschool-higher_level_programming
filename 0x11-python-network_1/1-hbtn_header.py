@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" A script that fetches URL  """
+""" http header request """
 from urllib import request
 import sys
 
