@@ -5,17 +5,8 @@ import sys
 
 
 if __name__ == "__main__":
-    if sys.argv[1]:
-        dicti = {'q': sys.argv[1]}
+    r = requests.(http://0.0.0.0:5000/search_user, data=sys.argv[1])
+    if r.status_code >= 400:
+        print('Error code: {}'.format(r.status_code))
     else:
-        dicti = {'q': ""}
-    r = requests.post(http://0.0.0.0:5000/search_user, dicti)
-
-    try:
-        f = r.json()
-        if len(f) > 0:
-            print("[{}] {}".format(f['id'], f['name']))
-        else:
-            print("No result")
-    except ValueError:
-        print("Not a valid JSON")
+        print(r.text)
