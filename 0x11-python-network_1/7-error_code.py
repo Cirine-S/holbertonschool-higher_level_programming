@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" take in a letter and send a POST request to a URL with the letter as a parameter"""
+""" take in a letter and send a POST request with that letter as param"""
 import requests
 import sys
 
