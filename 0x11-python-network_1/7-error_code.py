@@ -1,12 +1,21 @@
 #!/usr/bin/python3
-""" get request with error code handling"""
+""" take in a letter and send a POST request to a URL with the letter as a parameter"""
 import requests
 import sys
 
 
 if __name__ == "__main__":
-    r = requests.get(sys.argv[1])
-    if r.status_code >= 400:
-        print('Error code: {}'.format(r.status_code))
+    if sys.argv[1]:
+        dicti = {'q': sys.argv[1]}
     else:
-        print(r.text)
+        dicti = {'q': ""}
+    r = requests.post(http://0.0.0.0:5000/search_user, dicti)
+
+    try:
+        f = r.json()
+        if len(f) > 0:
+            print("[{}] {}".format(f['id'], f['name']))
+        else:
+            print("No result")
+    except ValueError:
+        print("Not a valid JSON")
