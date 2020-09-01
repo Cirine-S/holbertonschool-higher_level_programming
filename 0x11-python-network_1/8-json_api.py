@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" take in a letter and send a POST request to a URL with the letter as a parameter"""
+""" take in a letter and send a POST request with that letter as param"""
 import requests
 import sys
 
@@ -9,7 +9,7 @@ if __name__ == "__main__":
         dicti = {'q': sys.argv[1]}
     else:
         dicti = {'q': ""}
-    r = requests.post(http://0.0.0.0:5000/search_user, dicti)
+    r = requests.post('http://0.0.0.0:5000/search_user', dicti)
 
     try:
         f = r.json()

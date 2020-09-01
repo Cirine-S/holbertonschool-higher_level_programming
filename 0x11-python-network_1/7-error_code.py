@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" take in a letter and send a POST request with that letter as param"""
+"""error handling"""
 import requests
 import sys
 
