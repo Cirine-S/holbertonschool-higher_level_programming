@@ -1,5 +1,5 @@
 #!/usr/bin/node
-if (! process.argv[2]) {
+if (! process.argv[2] || ! parseInt(process.argv[2])) {
 console.log('Missing size')
 } else {
     for (i = 0; i < process.argv[2]; i++) {
