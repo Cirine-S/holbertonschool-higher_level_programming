@@ -1,9 +1,4 @@
 #!/usr/bin/node
-/*
-class Rectangle
-*/
-'use strict';
-
 class Rectangle {
   constructor (w, h) {
     this.width = w;

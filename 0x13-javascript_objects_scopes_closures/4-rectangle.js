@@ -1,9 +1,4 @@
 #!/usr/bin/node
-/*
-class Rectangle
-*/
-'use strict';
-
 let i;
 class Rectangle {
   constructor (w, h) {
