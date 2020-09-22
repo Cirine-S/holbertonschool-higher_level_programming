@@ -1,12 +1,11 @@
 #!/usr/bin/node
 let i;
+let exchange;
 class Rectangle {
   constructor (w, h) {
     if (w > 0 && h > 0) {
       this.width = w;
       this.height = h;
-    } else {
-      return Rectangle === {};
     }
   }
 
@@ -17,14 +16,14 @@ class Rectangle {
   }
 
   rotate () {
-    const rot = this.width;
-    this.width = this.height;
-    this.height = rot;
+    exchange = this.height;
+    this.height = this.width;
+    this.width = exchange;
   }
 
   double () {
-    this.width *= 2;
     this.height *= 2;
+    this.width *= 2;
   }
 }
 module.exports = Rectangle;
