@@ -3,7 +3,7 @@ const request = require('request');
 
 request(process.argv[2], (err, reponse, body) => {
   if (err) {
-    return console.log(err);
+    console.log(err);
   }
 
   const DoneDict = {};
